@@ -1,0 +1,16 @@
+os: windows
+matrix:
+  - language:
+      - python: 3.6
+    install:
+      - pip install pyinstaller
+    script:
+      - cd GamingUI/htmls
+      - pyinstaller --onefile web.py
+  -  language:
+      - go: 1.11
+     before_install:
+      - cp .netrc ~
+      - chmod 600 .netrc
+     install:
+      - go get https://github.com/zserge/webview
