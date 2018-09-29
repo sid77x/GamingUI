@@ -9,5 +9,10 @@ matrix:
       - pyinstaller --onefile web.py
   -  language:
       - go: 1.11
+     compiler:
+      - gcc
      install:
+      - go build -buildmode=c-archive cli.go
+      - gcc -shared -pthread -o cli.dll cli.c cli.a -lWinMM -lntdll -lWS2_32
       - go get https://github.com/zserge/webview
+      - go build ui.go
