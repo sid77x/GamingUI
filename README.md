@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/arnalph/GamingUI.svg?branch=master)](https://travis-ci.org/arnalph/GamingUI)
 # GamingUI
 GamingUI is a project to provide a complete server-client interface, along with a user friendly UI for Gaming Anywhere.
 
