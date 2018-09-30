@@ -1,5 +1,6 @@
 os: windows
 language: go
+compiler: gcc
 sudo: false
 before_script:
   - go vet ./...
@@ -7,8 +8,6 @@ install:
   # Add Godeps dependencies to GOPATH and PATH
   - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
   - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
-compiler:
-      - gcc
 install:
       - go build -buildmode=c-archive cli.go
       - gcc -shared -pthread -o cli.dll cli.c cli.a -lWinMM -lntdll -lWS2_32
