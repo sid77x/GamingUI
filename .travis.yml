@@ -1,17 +1,16 @@
 os: windows
-matrix:
-  - language:
-      - python: 3.6
+language:
+  - python: 3.6
     install:
       - pip install pyinstaller
-    script:
+script:
       - cd GamingUI/htmls
       - pyinstaller --onefile web.py
-  -  language:
+language:
       - go: 1.11
-     compiler:
+compiler:
       - gcc
-     install:
+install:
       - go build -buildmode=c-archive cli.go
       - gcc -shared -pthread -o cli.dll cli.c cli.a -lWinMM -lntdll -lWS2_32
       - go get https://github.com/zserge/webview
