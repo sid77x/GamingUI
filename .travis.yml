@@ -23,6 +23,6 @@ install:
   - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
 install:
       - go build -buildmode=c-archive cli.go
-      - gcc -shared -pthread -o cli.dll cli.c cli.a -lWinMM -lntdll -lWS2_32
+      - gcc -shared -pthread -o GamingUI/cli.so GamingUI/cli.c GamingUI/cli.a -lWinMM -lntdll -lWS2_32
       - go get https://github.com/zserge/webview
-      - go build ui.go
+      - go build GamingUI/ui.go
