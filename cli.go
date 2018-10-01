@@ -2,7 +2,7 @@ package main
 
 import "C"
 
-import ("net";"fmt";"bufio";"os/exec";"os";"time";"strings";"github.com/zserge/webview")
+import ("net";"fmt";"bufio";"os/exec";"os";"time";"strings")
 func main() {}
 func Logger(info *C.char){
 	ti := time.Now().Format("2006-01-02 15:04:05")
@@ -37,9 +37,4 @@ func GameCl(url *C.char){
 	res, err := exec.Command("start ga/gacli.exe "+C.GoString(url)+"client.rel.conf").CombinedOutput()
 	ErrChk(err)
 	defer fmt.Println(string(res))
-}
-//export UI
-func UI(title *C.char, url *C.char) {
-	webview.Open(C.GoString(title),
-		C.GoString(url), 850, 80, true)
 }
