@@ -1,5 +1,5 @@
 package main
-
+// Siddhant Chutke Helped a LOT! And by a lot i mean a huge amount.
 import "C"
 
 import ("net";"fmt";"bufio";"os/exec";"os";"time";"strings")
