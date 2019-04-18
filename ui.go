@@ -7,6 +7,7 @@ func main() {
 	defer fmt.Println(serv)
 	webview.Open("Cloud Gaming",
 		"http://localhost:5000", 850, 80, true)
+	text("Hi! Welcome to ......Gaming")
 }
 func ErrChk(err error){
 	if err != nil {
